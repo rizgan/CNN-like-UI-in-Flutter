@@ -18,7 +18,7 @@ class _FirstScreenState extends State<FirstScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Stack(
               children: <Widget>[
@@ -65,8 +65,9 @@ class _FirstScreenState extends State<FirstScreen> {
             ),
             Container(
               color: Color(0xfff3f0e1),
-              height: 150,
+              height: 130,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
@@ -90,7 +91,8 @@ class _FirstScreenState extends State<FirstScreen> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(
+                        left: 20.0, right: 20, top: 10, bottom: 10),
                     child: Text.rich(
                       TextSpan(
 //                      text: 'Hello', // default text style
@@ -98,24 +100,132 @@ class _FirstScreenState extends State<FirstScreen> {
                           TextSpan(
                             text: ' BREAKING NEWS ',
                             style: TextStyle(
-                              color: Color(0xff5f5f5f),
-                                fontSize: 11,
+                                color: Color(0xff5f5f5f),
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 backgroundColor: Colors.yellow,
                                 decorationStyle: TextDecorationStyle.dashed),
                           ),
                           TextSpan(
-                              text:
-                                  ' Bollywood superstar Deepika Padukone offers glimpse of upcoming acid attack film',
-                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff33342f),),),
+                            text:
+                                ' Bollywood superstar Deepika Padukone offers glimpse of upcoming acid attack film',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff33342f),
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  Text('Just now', style: TextStyle(color: Color(0xff979797), fontSize: 12),),
-
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 20.0, right: 20, bottom: 10),
+                    child: Text(
+                      'Just now',
+                      style: TextStyle(color: Color(0xff979797), fontSize: 12),
+                    ),
+                  ),
                 ],
               ),
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 20, right: 20.0, top: 10, bottom: 10),
+                  child: Image.network(
+                    'https://cdn.cnn.com/cnnnext/dam/assets/190808124918-02-hong-kong-china-medium-tease.jpg',
+                    width: 200,
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'China\'s new Hong \nKong tactic',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff33342f),
+                      ),
+                    ),
+                    Text(
+                      '1 minute age\n',
+                      style: TextStyle(color: Color(0xff979797), fontSize: 12),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 20.0, right: 20.0, top: 7, bottom: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Millions of Syrians call Turkey home. \nAn economic crisis is turning \nthem into scapegoats',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff797a74),
+                        ),
+                      ),
+                      Text(
+                        'Started 29 minutes ago',
+                        style:
+                            TextStyle(color: Color(0xff979797), fontSize: 12),
+                      ),
+                    ],
+                  ),
+                  RaisedButton(
+                    color: Color(0xffc60200),
+                    onPressed: () {},
+                    child: Text(
+                      'WATCH LIVE TV',
+                      style: TextStyle(fontSize: 8.3, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 20, right: 20.0, top: 10, bottom: 10),
+                  child: Image.network(
+                    'https://cdn.cnn.com/cnnnext/dam/assets/190808084250-india-china-border-2008-large-tease.jpg',
+                    width: 200,
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Will Modi take a leaf\nout of China\'s book?',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff33342f),
+                      ),
+                    ),
+                    Text(
+                      '5 minutes age\n',
+                      style: TextStyle(color: Color(0xff979797), fontSize: 12),
+                    )
+                  ],
+                ),
+              ],
             ),
           ],
         ),
